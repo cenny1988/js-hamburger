@@ -22,6 +22,6 @@ xToggleMenu.addEventListener('click',
 );
  
 if (document.querySelector(".hamburger-menu").style.minWidth > 1000) {
-    console.log(document.querySelector(".hamburger-menu").classList)
-    //hiddenMenu.classList.remove("active");
+    //console.log(document.querySelector(".hamburger-menu").classList)
+    hiddenMenu.classList.remove("active");
 }
