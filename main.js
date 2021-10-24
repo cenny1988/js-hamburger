@@ -2,27 +2,25 @@
 Hamburger menu: mostrare / nascondere il menu principale
 (ricordate che per vedere l’hamburger in alto a destra dovete scendere a risoluzioni tipo tablet o mobile).
 */
-
-let hiddenMenu = document.querySelector("div.hamburger-menu").style;
-let statusHamMenu = document.querySelector("div.header-right>a");
+let hiddenMenu = document.querySelector("div.hamburger-menu");
 let toggleMenu = document.querySelector("div.header-right>a");
 let xToggleMenu = document.querySelector("div.hamburger-menu>a.close");
-
-console.log(hiddenMenu.display);
-console.log(toggleMenu.display);
-//hiddenMenu.style.display = 'block';
-//console.log(window.getComputedStyle(hiddenMenu).visibility);
-//console.log(window.getComputedStyle(toggleMenu).display);
-//console.log(window.getComputedStyle(statusHamMenu).visibility);
+let headerWidth = document.querySelector("div.header-right");
+console.log(headerWidth.offsetWidth);
 
 toggleMenu.addEventListener('click',
     function(){
-        hiddenMenu.display = 'block';
+        hiddenMenu.classList.add("active");
     }
 );
 
 xToggleMenu.addEventListener('click',
     function(){
-        hiddenMenu.display = 'none';
+        hiddenMenu.classList.remove("active");
     }
 );
+
+if (headerWidth.offsetWidth >= 768 ){
+    hiddenMenu.classList.remove("active");
+    console.log("yeah!");
+}
